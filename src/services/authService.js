@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://backend.tigerjeshy.live/api/auth';
+const API_BASE_URL = 'http://192.168.100.64:8080/api/auth';
 
 export const login = async (username, password) => {
     try {

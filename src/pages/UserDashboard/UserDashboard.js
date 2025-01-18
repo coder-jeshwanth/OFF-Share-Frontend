@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./UserDashboard.css";
 
-const BASE_URL = "https://backend.tigerjeshy.live";
+const BASE_URL = "http://192.168.100.64:8080";
 
 const UserDashboard = () => {
     const [username, setUsername] = useState("");

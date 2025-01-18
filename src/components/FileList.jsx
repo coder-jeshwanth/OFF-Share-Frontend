@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const FileList = ({ files, onPreview, onPrint, onDownload, onRefresh }) => {
     const handleDeleteByUsername = async (username) => {
         try {
-            const response = await fetch(`https://backend.tigerjeshy.live/api/auth/files/deleteByUsername?userName=${username}`, {
+            const response = await fetch(`http://192.168.100.64:8080/api/auth/files/deleteByUsername?userName=${username}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',

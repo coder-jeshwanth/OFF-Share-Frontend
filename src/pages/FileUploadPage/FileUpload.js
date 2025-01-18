@@ -37,7 +37,7 @@ const FileUpload = () => {
         formData.append("username", username);
 
         try {
-            const response = await fetch("https://backend.tigerjeshy.live/api/user/upload", {
+            const response = await fetch("http://192.168.100.64:8080/api/user/upload", {
                 method: "POST",
                 body: formData,
                 onUploadProgress: (progressEvent) => {

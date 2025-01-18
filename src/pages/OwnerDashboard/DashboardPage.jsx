@@ -12,7 +12,7 @@ import FileList from "../../components/FileList";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./dashboardpage.css"; // Import the CSS file
 
-const BASE_URL = "https://backend.tigerjeshy.live";
+const BASE_URL = "http://192.168.100.64:8080";
 
 const DashboardPage = () => {
     const [files, setFiles] = useState({});
@@ -27,7 +27,6 @@ const DashboardPage = () => {
 
     const navigate = useNavigate();
 
-    // Fetch files and update the state
     const loadFiles = async () => {
         try {
             const token = getToken();
@@ -43,6 +42,10 @@ const DashboardPage = () => {
                 setFiles(response.data);
                 setFilteredFiles(response.data);
                 setError(""); // Clear the error if files are successfully loaded
+            } else if (response.status === "error" && response.messageSummary === "No files found") {
+                setFiles({});
+                setFilteredFiles({});
+                setError("There are no files currently stored.");
             } else {
                 setFiles({});
                 setFilteredFiles({});

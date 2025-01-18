@@ -13,7 +13,7 @@ const NameInput = ({ setUsername }) => {
     const checkUsernameAvailability = async (username) => {
         try {
             setIsChecking(true); // Indicate the API call is in progress
-            const response = await axios.post("https://backend.tigerjeshy.live/api/user/checkUsername", null, {
+            const response = await axios.post("http://192.168.100.64:8080/api/user/checkUsername", null, {
                 params: { username }, // Passing username as form data (query param in this case)
             });
             setIsChecking(false);
